@@ -42,6 +42,7 @@
 		B9D9E00B22CA8E5C00051FE2 /* ContactDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataModel.swift; sourceTree = "<group>"; };
 		B9D9E00D22CA8E6F00051FE2 /* AdDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDataModel.swift; sourceTree = "<group>"; };
 		B9D9E01022CA8E8E00051FE2 /* AdvancedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedList.swift; sourceTree = "<group>"; };
+		B9D9E01222CA971D00051FE2 /* AdvancedList.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = AdvancedList.gif; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +75,7 @@
 		B9D9DFE622CA8CDC00051FE2 /* AdvancedList */ = {
 			isa = PBXGroup;
 			children = (
+				B9D9E01222CA971D00051FE2 /* AdvancedList.gif */,
 				B9D9E00A22CA8E4800051FE2 /* Example */,
 				B9D9DFFD22CA8D3300051FE2 /* Models */,
 				B9D9DFFB22CA8D1B00051FE2 /* Protocols */,
