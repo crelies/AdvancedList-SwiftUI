@@ -9,8 +9,14 @@
 import SwiftUI
 
 struct ContentView : View {
+    @ObjectBinding private var listService = ListService()
+    
     var body: some View {
-        Text("Hello World")
+        NavigationView {
+            AdvancedList(listService: listService)
+                .navigationBarTitle(Text("List of Items"))
+                .navigationBarItems(trailing: ListStateChangeButton(listService: listService))
+        }
     }
 }
 
