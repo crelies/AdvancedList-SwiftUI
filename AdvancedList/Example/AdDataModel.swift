@@ -15,7 +15,7 @@ struct AdDataModel: DataModelProtocol {
     let identifier: String = UUID().uuidString
     var rowView: AnyView {
         AnyView(
-            NavigationButton(destination: Text(text), label: {
+            NavigationLink(destination: Text(text), label: {
                 Text("\(String(text.first ?? "U"))")
             })
         )

@@ -23,6 +23,8 @@ final class ListService: BindableObject {
         }
     }
     
+    var listError: Error?
+    
     var dataModels: [DataModelProtocol] = [] {
         didSet {
             didChange.send(())
@@ -36,15 +38,18 @@ final class ListService: BindableObject {
     }
     
     var emptyView: some View {
-        emptyViewProvider?.emptyView ?? AnyView(Text("No data available"))
+        let defaultEmptyMessage = "No data available"
+        return emptyViewProvider?.emptyView ?? AnyView(Text(defaultEmptyMessage).lineLimit(nil))
     }
     
     var errorView: some View {
-        errorViewProvider?.errorView ?? AnyView(Text("Error"))
+        let defaultErrorMessage = listError?.localizedDescription ?? "Error"
+        return errorViewProvider?.errorView(forError: listError) ?? AnyView(Text(defaultErrorMessage).lineLimit(nil))
     }
     
     var loadingView: some View {
-        loadingViewProvider?.loadingView ?? AnyView(Text("Loading"))
+        let defaultLoadingMessage = "Loading"
+        return loadingViewProvider?.loadingView ?? AnyView(Text(defaultLoadingMessage).lineLimit(nil))
     }
     
     init(emptyViewProvider: EmptyViewProvider? = nil,

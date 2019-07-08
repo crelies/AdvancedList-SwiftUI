@@ -10,5 +10,5 @@ import Foundation
 import SwiftUI
 
 protocol ErrorViewProvider: class {
-    var errorView: AnyView { get }
+    func errorView(forError error: Error?) -> AnyView
 }

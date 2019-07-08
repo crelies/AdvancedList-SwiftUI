@@ -42,13 +42,20 @@ struct ListStateChangeButton : View {
         Button(action: {
             let newState = ListState.allCases.randomElement()!
             if newState == .items {
+                self.listService?.listError = nil
+                
                 if Bool.random() {
                     self.listService?.dataModels.removeAll()
                 } else {
                     let dataModels = Array(0...5).map { ContactDataModel(firstName: "FirstName \($0)", lastName: "LastName \($0)") }
                     self.listService?.dataModels.append(contentsOf: dataModels)
                 }
+            } else if newState == .error {
+                self.listService?.listError = ExampleError.requestTimedOut
+            } else {
+                self.listService?.listError = nil
             }
+            
             self.listService?.listState = newState
         }, label: {
             Text("Trigger list state change")
@@ -62,7 +69,8 @@ struct ListStateChangeButton : View {
 
 struct AdvancedList_Previews : PreviewProvider {
     static var previews: some View {
-        let listService = ListService()
+        let exampleErrorViewProvider = ExampleErrorViewProvider()
+        let listService = ListService(errorViewProvider: exampleErrorViewProvider)
         return NavigationView {
             AdvancedList(listService: listService)
                 .navigationBarTitle(Text("List of Items"))

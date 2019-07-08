@@ -9,7 +9,8 @@
 import SwiftUI
 
 struct ContentView : View {
-    @ObjectBinding private var listService = ListService()
+    @ObjectBinding private var listService: ListService
+    private let errorViewProvider: ErrorViewProvider?
     
     var body: some View {
         NavigationView {
@@ -17,6 +18,11 @@ struct ContentView : View {
                 .navigationBarTitle(Text("List of Items"))
                 .navigationBarItems(trailing: ListStateChangeButton(listService: listService))
         }
+    }
+    
+    init(errorViewProvider: ErrorViewProvider? = nil) {
+        self.errorViewProvider = errorViewProvider
+        listService = ListService(errorViewProvider: errorViewProvider)
     }
 }
 

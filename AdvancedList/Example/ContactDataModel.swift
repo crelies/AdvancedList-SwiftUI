@@ -16,7 +16,7 @@ struct ContactDataModel: DataModelProtocol {
     var identifier: String = UUID().uuidString
     var rowView: AnyView {
         AnyView(
-            NavigationButton(destination: Text("\(firstName) \(lastName)"), label: {
+            NavigationLink(destination: Text("\(firstName) \(lastName)"), label: {
                 Text("\(String(firstName.first ?? "F")). \(String(lastName.first ?? "L")).")
             })
         )
