@@ -8,17 +8,34 @@
 
 import Foundation
 
-enum ListState: CaseIterable {
-    case error
+enum ListState {
+    case error(_ error: Error?)
     case items
     case loading
+}
+
+extension ListState {
+    var error: Error? {
+        switch self {
+            case .error(let error):
+                return error
+            default:
+                return nil
+        }
+    }
 }
 
 extension ListState: Equatable {
     static func ==(lhs: ListState, rhs: ListState) -> Bool {
         switch (lhs, rhs) {
-            case (.error, .error):
-                return true
+            case (.error(let lhsError), .error(let rhsError)):
+                if let lhsError = lhsError, let rhsError = rhsError {
+                    return (lhsError as NSError) == (rhsError as NSError)
+                } else if lhsError == nil && rhsError == nil {
+                    return true
+                } else {
+                    return false
+                }
             case (.items, .items):
                 return true
             case (.loading, .loading):

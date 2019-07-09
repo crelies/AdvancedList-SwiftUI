@@ -12,9 +12,9 @@ struct AdvancedList : View {
     @ObjectBinding private var listService: ListService
     
     var body: some View {
-        Group {
-            if listService.listState == .error {
-                listService.errorView
+        return Group {
+            if listService.listState.error != nil {
+                listService.errorView(forError: listService.listState.error)
             } else if listService.listState == .items {
                 if !listService.dataModels.isEmpty {
                     listService.itemsView
@@ -37,23 +37,21 @@ struct AdvancedList : View {
 #if DEBUG
 struct ListStateChangeButton : View {
     private weak var listService: ListService?
+    private let listStates: [ListState] = [.error(ExampleError.requestTimedOut),
+                                           .items,
+                                           .loading]
     
     var body: some View {
         Button(action: {
-            let newState = ListState.allCases.randomElement()!
+            let newState = self.listStates.randomElement()!
             if newState == .items {
-                self.listService?.listError = nil
-                
                 if Bool.random() {
                     self.listService?.dataModels.removeAll()
                 } else {
+                    self.listService?.dataModels.removeAll()
                     let dataModels = Array(0...5).map { ContactDataModel(firstName: "FirstName \($0)", lastName: "LastName \($0)") }
                     self.listService?.dataModels.append(contentsOf: dataModels)
                 }
-            } else if newState == .error {
-                self.listService?.listError = ExampleError.requestTimedOut
-            } else {
-                self.listService?.listError = nil
             }
             
             self.listService?.listState = newState
