@@ -11,10 +11,6 @@ import Foundation
 import SwiftUI
 
 final class ListService: BindableObject {
-    private weak var emptyViewProvider: EmptyViewProvider?
-    private weak var errorViewProvider: ErrorViewProvider?
-    private weak var loadingViewProvider: LoadingViewProvider?
-    
     private(set) var didChange = PassthroughSubject<Void, Never>()
     
     var listState: ListState = .items {
@@ -27,34 +23,5 @@ final class ListService: BindableObject {
         didSet {
             didChange.send(())
         }
-    }
-    
-    var itemsView: some View {
-        List(dataModels.identified(by: \.identifier)) { dataModel in
-            dataModel.rowView
-        }
-    }
-    
-    var emptyView: some View {
-        let defaultEmptyMessage = "No data available"
-        return emptyViewProvider?.emptyView ?? AnyView(Text(defaultEmptyMessage).lineLimit(nil))
-    }
-    
-    var loadingView: some View {
-        let defaultLoadingMessage = "Loading"
-        return loadingViewProvider?.loadingView ?? AnyView(Text(defaultLoadingMessage).lineLimit(nil))
-    }
-    
-    init(emptyViewProvider: EmptyViewProvider? = nil,
-         errorViewProvider: ErrorViewProvider? = nil,
-         loadingViewProvider: LoadingViewProvider? = nil) {
-        self.emptyViewProvider = emptyViewProvider
-        self.errorViewProvider = errorViewProvider
-        self.loadingViewProvider = loadingViewProvider
-    }
-    
-    func errorView(forError error: Error?) -> some View {
-        let defaultErrorMessage = "Error"
-        return errorViewProvider?.errorView(forError: error) ?? AnyView(Text(defaultErrorMessage).lineLimit(nil))
     }
 }

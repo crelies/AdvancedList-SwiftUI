@@ -9,20 +9,20 @@
 import SwiftUI
 
 struct ContentView : View {
-    @ObjectBinding private var listService: ListService
-    private let errorViewProvider: ErrorViewProvider?
+    @ObjectBinding private var listService: ListService = ListService()
     
     var body: some View {
         NavigationView {
-            AdvancedList(listService: listService)
-                .navigationBarTitle(Text("List of Items"))
-                .navigationBarItems(trailing: ListStateChangeButton(listService: listService))
+            AdvancedList(listService: listService, emptyView: {
+                AnyView(Text("Empty"))
+            }, errorView: { error in
+                AnyView(Text("\(error?.localizedDescription ?? "Error")").lineLimit(nil))
+            }) {
+                AnyView(Text("Loading"))
+            }
+            .navigationBarTitle(Text("List of Items"))
+            .navigationBarItems(trailing: ListStateChangeButton(listService: listService))
         }
-    }
-    
-    init(errorViewProvider: ErrorViewProvider? = nil) {
-        self.errorViewProvider = errorViewProvider
-        listService = ListService(errorViewProvider: errorViewProvider)
     }
 }
 

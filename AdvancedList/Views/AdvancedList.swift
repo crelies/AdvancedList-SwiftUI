@@ -10,27 +10,35 @@ import SwiftUI
 
 struct AdvancedList : View {
     @ObjectBinding private var listService: ListService
+    private let emptyView: () -> AnyView
+    private let errorView: (Error?) -> AnyView
+    private let loadingView: () -> AnyView
     
     var body: some View {
         return Group {
             if listService.listState.error != nil {
-                listService.errorView(forError: listService.listState.error)
+                errorView(listService.listState.error)
             } else if listService.listState == .items {
                 if !listService.dataModels.isEmpty {
-                    listService.itemsView
+                    List(listService.dataModels.identified(by: \.identifier)) { dataModel in
+                        dataModel.rowView
+                    }
                 } else {
-                    listService.emptyView
+                    emptyView()
                 }
             } else if listService.listState == .loading {
-                listService.loadingView
+                loadingView()
             } else {
                 EmptyView()
             }
         }
     }
     
-    init(listService: ListService) {
+    init(listService: ListService, @ViewBuilder emptyView: @escaping () -> AnyView, @ViewBuilder errorView: @escaping (Error?) -> AnyView, @ViewBuilder loadingView: @escaping () -> AnyView) {
         self.listService = listService
+        self.emptyView = emptyView
+        self.errorView = errorView
+        self.loadingView = loadingView
     }
 }
 
@@ -67,12 +75,28 @@ struct ListStateChangeButton : View {
 
 struct AdvancedList_Previews : PreviewProvider {
     static var previews: some View {
-        let exampleErrorViewProvider = ExampleErrorViewProvider()
-        let listService = ListService(errorViewProvider: exampleErrorViewProvider)
+        let listService = ListService()
         return NavigationView {
-            AdvancedList(listService: listService)
-                .navigationBarTitle(Text("List of Items"))
-                .navigationBarItems(trailing: ListStateChangeButton(listService: listService))
+            AdvancedList(listService: listService, emptyView: {
+                AnyView(Text("No data"))
+            }, errorView: { error in
+                AnyView(
+                    VStack {
+                        Text(error?.localizedDescription ?? "Error")
+                            .lineLimit(nil)
+                        
+                        Button(action: {
+                            // do something
+                        }) {
+                            Text("Retry")
+                        }
+                    }
+                )
+            }) {
+                AnyView(Text("Loading ..."))
+            }
+            .navigationBarTitle(Text("List of Items"))
+            .navigationBarItems(trailing: ListStateChangeButton(listService: listService))
         }
     }
 }

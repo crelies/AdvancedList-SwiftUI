@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B9884A4B22D3C99000063925 /* ExampleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9884A4A22D3C99000063925 /* ExampleError.swift */; };
-		B9884A4D22D3C9D100063925 /* ExampleErrorViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9884A4C22D3C9D100063925 /* ExampleErrorViewProvider.swift */; };
 		B9D9DFE822CA8CDC00051FE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D9DFE722CA8CDC00051FE2 /* AppDelegate.swift */; };
 		B9D9DFEA22CA8CDC00051FE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D9DFE922CA8CDC00051FE2 /* SceneDelegate.swift */; };
 		B9D9DFEC22CA8CDC00051FE2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D9DFEB22CA8CDC00051FE2 /* ContentView.swift */; };
@@ -16,9 +15,6 @@
 		B9D9DFF122CA8CDD00051FE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D9DFF022CA8CDD00051FE2 /* Preview Assets.xcassets */; };
 		B9D9DFF422CA8CDD00051FE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D9DFF222CA8CDD00051FE2 /* LaunchScreen.storyboard */; };
 		B9D9DFFF22CA8D4900051FE2 /* DataModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D9DFFE22CA8D4900051FE2 /* DataModelProtocol.swift */; };
-		B9D9E00122CA8D6000051FE2 /* EmptyViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D9E00022CA8D6000051FE2 /* EmptyViewProvider.swift */; };
-		B9D9E00322CA8D7000051FE2 /* ErrorViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D9E00222CA8D7000051FE2 /* ErrorViewProvider.swift */; };
-		B9D9E00522CA8D8000051FE2 /* LoadingViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D9E00422CA8D7F00051FE2 /* LoadingViewProvider.swift */; };
 		B9D9E00722CA8D9000051FE2 /* ListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D9E00622CA8D9000051FE2 /* ListState.swift */; };
 		B9D9E00922CA8DCE00051FE2 /* ListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D9E00822CA8DCE00051FE2 /* ListService.swift */; };
 		B9D9E00C22CA8E5C00051FE2 /* ContactDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D9E00B22CA8E5C00051FE2 /* ContactDataModel.swift */; };
@@ -28,7 +24,6 @@
 
 /* Begin PBXFileReference section */
 		B9884A4A22D3C99000063925 /* ExampleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleError.swift; sourceTree = "<group>"; };
-		B9884A4C22D3C9D100063925 /* ExampleErrorViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleErrorViewProvider.swift; sourceTree = "<group>"; };
 		B9D9DFE422CA8CDC00051FE2 /* AdvancedList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdvancedList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D9DFE722CA8CDC00051FE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9D9DFE922CA8CDC00051FE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,9 +33,6 @@
 		B9D9DFF322CA8CDD00051FE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9D9DFF522CA8CDD00051FE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9D9DFFE22CA8D4900051FE2 /* DataModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelProtocol.swift; sourceTree = "<group>"; };
-		B9D9E00022CA8D6000051FE2 /* EmptyViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewProvider.swift; sourceTree = "<group>"; };
-		B9D9E00222CA8D7000051FE2 /* ErrorViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewProvider.swift; sourceTree = "<group>"; };
-		B9D9E00422CA8D7F00051FE2 /* LoadingViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewProvider.swift; sourceTree = "<group>"; };
 		B9D9E00622CA8D9000051FE2 /* ListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListState.swift; sourceTree = "<group>"; };
 		B9D9E00822CA8DCE00051FE2 /* ListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListService.swift; sourceTree = "<group>"; };
 		B9D9E00B22CA8E5C00051FE2 /* ContactDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataModel.swift; sourceTree = "<group>"; };
@@ -108,9 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				B9D9DFFE22CA8D4900051FE2 /* DataModelProtocol.swift */,
-				B9D9E00022CA8D6000051FE2 /* EmptyViewProvider.swift */,
-				B9D9E00222CA8D7000051FE2 /* ErrorViewProvider.swift */,
-				B9D9E00422CA8D7F00051FE2 /* LoadingViewProvider.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -137,7 +126,6 @@
 				B9D9E00D22CA8E6F00051FE2 /* AdDataModel.swift */,
 				B9D9E00B22CA8E5C00051FE2 /* ContactDataModel.swift */,
 				B9884A4A22D3C99000063925 /* ExampleError.swift */,
-				B9884A4C22D3C9D100063925 /* ExampleErrorViewProvider.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -222,17 +210,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9D9E00E22CA8E6F00051FE2 /* AdDataModel.swift in Sources */,
-				B9884A4D22D3C9D100063925 /* ExampleErrorViewProvider.swift in Sources */,
 				B9D9E00922CA8DCE00051FE2 /* ListService.swift in Sources */,
-				B9D9E00322CA8D7000051FE2 /* ErrorViewProvider.swift in Sources */,
 				B9D9E01122CA8E8E00051FE2 /* AdvancedList.swift in Sources */,
 				B9D9DFE822CA8CDC00051FE2 /* AppDelegate.swift in Sources */,
-				B9D9E00122CA8D6000051FE2 /* EmptyViewProvider.swift in Sources */,
 				B9D9DFEA22CA8CDC00051FE2 /* SceneDelegate.swift in Sources */,
 				B9D9DFEC22CA8CDC00051FE2 /* ContentView.swift in Sources */,
 				B9D9DFFF22CA8D4900051FE2 /* DataModelProtocol.swift in Sources */,
 				B9884A4B22D3C99000063925 /* ExampleError.swift in Sources */,
-				B9D9E00522CA8D8000051FE2 /* LoadingViewProvider.swift in Sources */,
 				B9D9E00C22CA8E5C00051FE2 /* ContactDataModel.swift in Sources */,
 				B9D9E00722CA8D9000051FE2 /* ListState.swift in Sources */,
 			);
