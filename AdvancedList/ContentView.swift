@@ -13,12 +13,12 @@ struct ContentView : View {
     
     var body: some View {
         NavigationView {
-            AdvancedList(listService: listService, emptyView: {
-                AnyView(Text("Empty"))
-            }, errorView: { error in
-                AnyView(Text("\(error?.localizedDescription ?? "Error")").lineLimit(nil))
+            AdvancedList(listService: listService, emptyStateView: {
+                Text("Empty")
+            }, errorStateView: { error in
+                Text("\(error?.localizedDescription ?? "Error")").lineLimit(nil)
             }) {
-                AnyView(Text("Loading"))
+                Text("Loading")
             }
             .navigationBarTitle(Text("List of Items"))
             .navigationBarItems(trailing: ListStateChangeButton(listService: listService))

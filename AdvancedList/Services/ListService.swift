@@ -19,7 +19,7 @@ final class ListService: BindableObject {
         }
     }
     
-    var dataModels: [DataModelProtocol] = [] {
+    var items: [ListItemProtocol] = [] {
         didSet {
             didChange.send(())
         }

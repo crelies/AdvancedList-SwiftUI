@@ -1,5 +1,5 @@
 //
-//  AdDataModel.swift
+//  AdListItemModel.swift
 //  AdvancedList
 //
 //  Created by Christian Elies on 01.07.19.
@@ -9,14 +9,14 @@
 import Foundation
 import SwiftUI
 
-struct AdDataModel: DataModelProtocol {
+struct AdListItemModel: ListItemProtocol {
     let text: String
     
     let identifier: String = UUID().uuidString
-    var rowView: AnyView {
+    var viewRepresentation: AnyView {
         AnyView(
             NavigationLink(destination: Text(text), label: {
-                Text("\(String(text.first ?? "U"))")
+                Text(text)
             })
         )
     }

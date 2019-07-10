@@ -8,12 +8,18 @@
 
 import Foundation
 
-enum ExampleError: Error {
+enum ExampleError: Error, CaseIterable {
     case requestTimedOut
+    case unknown
 }
 
-extension ExampleError: CustomStringConvertible {
-    var description: String {
-        return "The request timed out."
+extension ExampleError: LocalizedError {
+    var errorDescription: String? {
+        switch self {
+            case .requestTimedOut:
+                return "The request timed out."
+            case .unknown:
+                return "An unknown error occurred."
+        }
     }
 }

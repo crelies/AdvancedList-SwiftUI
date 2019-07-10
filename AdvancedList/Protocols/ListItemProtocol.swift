@@ -1,5 +1,5 @@
 //
-//  DataModelProtocol.swift
+//  ListItemProtocol.swift
 //  AdvancedList
 //
 //  Created by Christian Elies on 01.07.19.
@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-protocol DataModelProtocol {
+protocol ListItemProtocol {
     var identifier: String { get }
-    var rowView: AnyView { get }
+    var viewRepresentation: AnyView { get }
 }
