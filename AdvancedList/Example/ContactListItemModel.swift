@@ -9,16 +9,48 @@
 import Foundation
 import SwiftUI
 
-struct ContactListItemModel: ListItemProtocol {
+enum ContactListItemModelViewRepresentationType: CaseIterable {
+    case overview
+    case detail
+}
+
+struct ContactListItemModel {
+    let identifier: String
+    
     let firstName: String
     let lastName: String
-    
-    var identifier: String = UUID().uuidString
+    let streetAddress: String
+    let zip: String
+    let city: String
+    var viewRepresentationType: ContactListItemModelViewRepresentationType = .overview
+}
+
+extension ContactListItemModel: ListItemProtocol {
     var viewRepresentation: AnyView {
-        AnyView(
-            NavigationLink(destination: Text("\(firstName) \(lastName)"), label: {
-                Text("\(String(firstName.first ?? "F")). \(String(lastName.first ?? "L")).")
-            })
-        )
+        switch viewRepresentationType {
+            case .overview:
+                return AnyView(
+                    HStack {
+                        Text(firstName)
+                        Text(lastName)
+                    }
+                )
+            case .detail:
+                return AnyView(
+                    VStack {
+                        Text("Detail")
+                            .font(.headline)
+                        HStack {
+                            Text(firstName)
+                            Text(lastName)
+                        }
+                        Text(streetAddress)
+                        HStack {
+                            Text(zip)
+                            Text(city)
+                        }
+                    }
+                )
+        }
     }
 }

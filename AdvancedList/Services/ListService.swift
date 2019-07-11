@@ -13,12 +13,6 @@ import SwiftUI
 final class ListService: BindableObject {
     private(set) var didChange = PassthroughSubject<Void, Never>()
     
-    var listState: ListState = .items {
-        didSet {
-            didChange.send(())
-        }
-    }
-    
     var items: [ListItemProtocol] = [] {
         didSet {
             didChange.send(())

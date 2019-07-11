@@ -10,18 +10,19 @@ import SwiftUI
 
 struct ContentView : View {
     @ObjectBinding private var listService: ListService = ListService()
+    @State private var listState: ListState = .items
     
     var body: some View {
         NavigationView {
-            AdvancedList(listService: listService, emptyStateView: {
-                Text("Empty")
+            AdvancedList(listService: listService, listState: $listState, emptyStateView: {
+                Text("No data")
             }, errorStateView: { error in
                 Text("\(error?.localizedDescription ?? "Error")").lineLimit(nil)
             }) {
-                Text("Loading")
+                Text("Loading ...")
             }
             .navigationBarTitle(Text("List of Items"))
-            .navigationBarItems(trailing: ListStateChangeButton(listService: listService))
+            .navigationBarItems(trailing: ListStateChangeButton(listService: listService, listState: $listState))
         }
     }
 }

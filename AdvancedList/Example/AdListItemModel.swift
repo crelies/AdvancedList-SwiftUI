@@ -9,15 +9,31 @@
 import Foundation
 import SwiftUI
 
-struct AdListItemModel: ListItemProtocol {
+enum AdListItemModelViewRepresentationType: CaseIterable {
+    case short
+    case long
+}
+
+struct AdListItemModel {
+    let identifier: String
+
     let text: String
-    
-    let identifier: String = UUID().uuidString
+    var viewRepresentationType: AdListItemModelViewRepresentationType = .short
+}
+
+extension AdListItemModel: ListItemProtocol {
     var viewRepresentation: AnyView {
-        AnyView(
-            NavigationLink(destination: Text(text), label: {
-                Text(text)
-            })
-        )
+        switch viewRepresentationType {
+            case .short:
+                return AnyView(
+                    Text(text)
+                        .lineLimit(1)
+                )
+            case .long:
+                return AnyView(
+                    Text(text)
+                        .lineLimit(nil)
+                )
+        }
     }
 }
