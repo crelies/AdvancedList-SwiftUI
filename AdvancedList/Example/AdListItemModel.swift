@@ -26,8 +26,10 @@ extension AdListItemModel: ListItemProtocol {
         switch viewRepresentationType {
             case .short:
                 return AnyView(
-                    Text(text)
+                    NavigationLink(destination: Text(text).lineLimit(nil), label: {
+                        Text(text)
                         .lineLimit(1)
+                    })
                 )
             case .long:
                 return AnyView(
