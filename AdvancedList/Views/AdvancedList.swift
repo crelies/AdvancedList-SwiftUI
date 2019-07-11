@@ -70,7 +70,6 @@ struct AdvancedList_Previews : PreviewProvider {
                 Text("Loading ...")
             }
             .navigationBarTitle(Text("List of Items"))
-            .navigationBarItems(trailing: ListStateChangeButton(listService: listService, listState: $listState))
         }
     }
 }

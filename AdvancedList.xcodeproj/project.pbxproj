@@ -20,8 +20,8 @@
 		B9D9E00C22CA8E5C00051FE2 /* ContactListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D9E00B22CA8E5C00051FE2 /* ContactListItemModel.swift */; };
 		B9D9E01122CA8E8E00051FE2 /* AdvancedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D9E01022CA8E8E00051FE2 /* AdvancedList.swift */; };
 		CEA92D2522D6127C000C3F7A /* AdListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA92D2422D6127C000C3F7A /* AdListItemModel.swift */; };
-		CEA92D2922D67908000C3F7A /* ListStateChangeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA92D2822D67908000C3F7A /* ListStateChangeButton.swift */; };
 		CEAD564722D75C4500FB141B /* ExampleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD564622D75C4500FB141B /* ExampleDataProvider.swift */; };
+		CEAD564922D7C26300FB141B /* CustomListStateSegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD564822D7C26300FB141B /* CustomListStateSegmentedControlView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,8 +41,8 @@
 		B9D9E01022CA8E8E00051FE2 /* AdvancedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedList.swift; sourceTree = "<group>"; };
 		B9D9E01222CA971D00051FE2 /* AdvancedList.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = AdvancedList.gif; sourceTree = SOURCE_ROOT; };
 		CEA92D2422D6127C000C3F7A /* AdListItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdListItemModel.swift; sourceTree = "<group>"; };
-		CEA92D2822D67908000C3F7A /* ListStateChangeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStateChangeButton.swift; sourceTree = "<group>"; };
 		CEAD564622D75C4500FB141B /* ExampleDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleDataProvider.swift; sourceTree = "<group>"; };
+		CEAD564822D7C26300FB141B /* CustomListStateSegmentedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListStateSegmentedControlView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,6 @@
 				B9D9E00F22CA8E7F00051FE2 /* Views */,
 				B9D9DFE722CA8CDC00051FE2 /* AppDelegate.swift */,
 				B9D9DFE922CA8CDC00051FE2 /* SceneDelegate.swift */,
-				B9D9DFEB22CA8CDC00051FE2 /* ContentView.swift */,
 				B9D9DFED22CA8CDD00051FE2 /* Assets.xcassets */,
 				B9D9DFF222CA8CDD00051FE2 /* LaunchScreen.storyboard */,
 				B9D9DFF522CA8CDD00051FE2 /* Info.plist */,
@@ -129,9 +128,10 @@
 			children = (
 				CEA92D2422D6127C000C3F7A /* AdListItemModel.swift */,
 				B9D9E00B22CA8E5C00051FE2 /* ContactListItemModel.swift */,
+				B9D9DFEB22CA8CDC00051FE2 /* ContentView.swift */,
+				CEAD564822D7C26300FB141B /* CustomListStateSegmentedControlView.swift */,
 				CEAD564622D75C4500FB141B /* ExampleDataProvider.swift */,
 				B9884A4A22D3C99000063925 /* ExampleError.swift */,
-				CEA92D2822D67908000C3F7A /* ListStateChangeButton.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -215,10 +215,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEAD564922D7C26300FB141B /* CustomListStateSegmentedControlView.swift in Sources */,
 				B9D9E00922CA8DCE00051FE2 /* ListService.swift in Sources */,
 				B9D9E01122CA8E8E00051FE2 /* AdvancedList.swift in Sources */,
 				B9D9DFE822CA8CDC00051FE2 /* AppDelegate.swift in Sources */,
-				CEA92D2922D67908000C3F7A /* ListStateChangeButton.swift in Sources */,
 				B9D9DFEA22CA8CDC00051FE2 /* SceneDelegate.swift in Sources */,
 				CEAD564722D75C4500FB141B /* ExampleDataProvider.swift in Sources */,
 				B9D9DFEC22CA8CDC00051FE2 /* ContentView.swift in Sources */,
