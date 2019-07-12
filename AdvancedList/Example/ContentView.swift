@@ -10,22 +10,21 @@ import SwiftUI
 
 struct ContentView : View {
     @ObjectBinding private var listService: ListService = ListService()
-    @State private var listState: ListState = .items
     
     var body: some View {
         NavigationView {
             return GeometryReader { geometry in
                 VStack {
-                    CustomListStateSegmentedControlView(listState: self.$listState, listService: self.listService)
+                    CustomListStateSegmentedControlView(listService: self.listService)
                     
-                    AdvancedList(listService: self.listService, listState: self.$listState, emptyStateView: {
+                    AdvancedList(listService: self.listService, emptyStateView: {
                         Text("No data")
                     }, errorStateView: { error in
                         Text("\(error?.localizedDescription ?? "Error")").lineLimit(nil)
-                    }) {
+                    }, loadingStateView: {
                         Text("Loading ...")
-                    }.frame(width: geometry.size.width,
-                            height: geometry.size.height)
+                    })
+                    .frame(width: geometry.size.width)
                 }
                 .navigationBarTitle(Text("List of Items"))
             }

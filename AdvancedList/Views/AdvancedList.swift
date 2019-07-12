@@ -14,21 +14,19 @@ struct AdvancedList<EmptyStateView: View, ErrorStateView: View, LoadingStateView
     private let errorStateView: (Error?) -> ErrorStateView
     private let loadingStateView: () -> LoadingStateView
     
-    private var listState: Binding<ListState>
-    
     var body: some View {
         return Group {
-            if listState.value.error != nil {
-                errorStateView(listState.value.error)
-            } else if listState.value == .items {
+            if listService.listState.error != nil {
+                errorStateView(listService.listState.error)
+            } else if listService.listState == .items {
                 if !listService.items.isEmpty {
-                    List(listService.items.identified(by: \.identifier)) { item in
+                    List(listService.items.identified(by: \.id)) { item in
                         item.viewRepresentation
                     }
                 } else {
                     emptyStateView()
                 }
-            } else if listState.value == .loading {
+            } else if listService.listState == .loading {
                 loadingStateView()
             } else {
                 EmptyView()
@@ -36,9 +34,8 @@ struct AdvancedList<EmptyStateView: View, ErrorStateView: View, LoadingStateView
         }
     }
     
-    init(listService: ListService, listState: Binding<ListState>, @ViewBuilder emptyStateView: @escaping () -> EmptyStateView, @ViewBuilder errorStateView: @escaping (Error?) -> ErrorStateView, @ViewBuilder loadingStateView: @escaping () -> LoadingStateView) {
+    init(listService: ListService, @ViewBuilder emptyStateView: @escaping () -> EmptyStateView, @ViewBuilder errorStateView: @escaping (Error?) -> ErrorStateView, @ViewBuilder loadingStateView: @escaping () -> LoadingStateView) {
         self.listService = listService
-        self.listState = listState
         self.emptyStateView = emptyStateView
         self.errorStateView = errorStateView
         self.loadingStateView = loadingStateView
@@ -47,13 +44,12 @@ struct AdvancedList<EmptyStateView: View, ErrorStateView: View, LoadingStateView
 
 #if DEBUG
 struct AdvancedList_Previews : PreviewProvider {
+    private static let listService = ListService()
     @State private static var listState: ListState = .items
     
     static var previews: some View {
-        let listService = ListService()
-        
         return NavigationView {
-            AdvancedList(listService: listService, listState: $listState, emptyStateView: {
+            AdvancedList(listService: listService, emptyStateView: {
                 Text("No data")
             }, errorStateView: { error in
                 VStack {
@@ -66,9 +62,9 @@ struct AdvancedList_Previews : PreviewProvider {
                         Text("Retry")
                     }
                 }
-            }) {
+            }, loadingStateView: {
                 Text("Loading ...")
-            }
+            })
             .navigationBarTitle(Text("List of Items"))
         }
     }

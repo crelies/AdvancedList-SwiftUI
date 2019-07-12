@@ -10,44 +10,42 @@ import Foundation
 import SwiftUI
 
 struct CustomListStateSegmentedControlView : View {
-    private var listState: Binding<ListState>
     private weak var listService: ListService?
     
     var body: some View {
         HStack {
             Button(action: {
-                self.listState.value = .items
+                self.listService?.listState = .items
                 
                 let items = ExampleDataProvider.randomItems()
-                self.listService?.items.removeAll()
-                self.listService?.items.append(contentsOf: items)
+                self.listService?.removeAllItems()
+                self.listService?.appendItems(items)
             }) {
                 Text("Items")
             }
             
             Button(action: {
-                self.listService?.items.removeAll()
-                self.listState.value = .items
+                self.listService?.removeAllItems()
+                self.listService?.listState = .items
             }) {
                 Text("Empty")
             }
             
             Button(action: {
-                self.listState.value = .loading
+                self.listService?.listState = .loading
             }) {
                 Text("Loading")
             }
             
             Button(action: {
-                self.listState.value = .error(ExampleError.allCases.randomElement()!)
+                self.listService?.listState = .error(ExampleError.allCases.randomElement()!)
             }) {
                 Text("Error")
             }
         }
     }
     
-    init(listState: Binding<ListState>, listService: ListService) {
-        self.listState = listState
+    init(listService: ListService) {
         self.listService = listService
     }
 }
