@@ -1,5 +1,5 @@
 //
-//  ContactListItemModelViewRepresentationType.swift
+//  AdListItemViewRepresentationType.swift
 //  AdvancedList
 //
 //  Created by Christian Elies on 12.07.19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ContactListItemModelViewRepresentationType: CaseIterable {
-    case overview
-    case detail
+enum AdListItemViewRepresentationType: CaseIterable {
+    case short
+    case long
 }

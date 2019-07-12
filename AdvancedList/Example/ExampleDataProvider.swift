@@ -20,22 +20,22 @@ final class ExampleDataProvider {
                 let streetAddress = "Feldstraße 9"
                 let zip = "21337"
                 let city = "Lüneburg"
-                let viewRepresentationType = ContactListItemModelViewRepresentationType.allCases.randomElement()!
-                let itemModel = ContactListItemModel(id: id,
-                                                     firstName: firstName,
-                                                     lastName: lastName,
-                                                     streetAddress: streetAddress,
-                                                     zip: zip,
-                                                     city: city,
-                                                     viewRepresentationType: viewRepresentationType)
+                let viewRepresentationType = ContactListItemViewRepresentationType.allCases.randomElement()!
+                let itemModel = ContactListItem(id: id,
+                                                firstName: firstName,
+                                                lastName: lastName,
+                                                streetAddress: streetAddress,
+                                                zip: zip,
+                                                city: city,
+                                                viewRepresentationType: viewRepresentationType)
                 return AnyListItem(item: itemModel)
             } else {
                 let id = UUID().uuidString
                 let text = "This is a really long and annoying advertisement I really want to get rid off."
-                let viewRepresentationType = AdListItemModelViewRepresentationType.allCases.randomElement()!
-                let itemModel = AdListItemModel(id: id,
-                                                text: text,
-                                                viewRepresentationType: viewRepresentationType)
+                let viewRepresentationType = AdListItemViewRepresentationType.allCases.randomElement()!
+                let itemModel = AdListItem(id: id,
+                                           text: text,
+                                           viewRepresentationType: viewRepresentationType)
                 return AnyListItem(item: itemModel)
             }
         }

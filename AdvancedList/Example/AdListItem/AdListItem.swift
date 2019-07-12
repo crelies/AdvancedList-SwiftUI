@@ -1,5 +1,5 @@
 //
-//  AdListItemModel.swift
+//  AdListItem.swift
 //  AdvancedList
 //
 //  Created by Christian Elies on 01.07.19.
@@ -9,13 +9,13 @@
 import Foundation
 import SwiftUI
 
-struct AdListItemModel {
+struct AdListItem {
     let id: String
     let text: String
-    var viewRepresentationType: AdListItemModelViewRepresentationType = .short
+    var viewRepresentationType: AdListItemViewRepresentationType = .short
 }
 
-extension AdListItemModel: ListItem {
+extension AdListItem: ListItem {
     var viewRepresentation: some View {
         Group {
             if viewRepresentationType == .short {

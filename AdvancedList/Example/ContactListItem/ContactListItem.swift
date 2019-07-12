@@ -1,5 +1,5 @@
 //
-//  ContactListItemModel.swift
+//  ContactListItem.swift
 //  AdvancedList
 //
 //  Created by Christian Elies on 01.07.19.
@@ -9,17 +9,17 @@
 import Foundation
 import SwiftUI
 
-struct ContactListItemModel {
+struct ContactListItem {
     let id: String
     let firstName: String
     let lastName: String
     let streetAddress: String
     let zip: String
     let city: String
-    var viewRepresentationType: ContactListItemModelViewRepresentationType = .overview
+    var viewRepresentationType: ContactListItemViewRepresentationType = .overview
 }
 
-extension ContactListItemModel: ListItem {
+extension ContactListItem: ListItem {
     var viewRepresentation: some View {
         Group {
             if viewRepresentationType == .overview {
