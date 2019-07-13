@@ -17,9 +17,9 @@ final class ExampleDataProvider {
                 let id = UUID().uuidString
                 let firstName = "Max"
                 let lastName = "Mustermann"
-                let streetAddress = "Feldstraße 9"
-                let zip = "21337"
-                let city = "Lüneburg"
+                let streetAddress = "Schlossallee 19"
+                let zip = "20097"
+                let city = "Hamburg"
                 let viewRepresentationType = ContactListItemViewRepresentationType.allCases.randomElement()!
                 let itemModel = ContactListItem(id: id,
                                                 firstName: firstName,
@@ -31,7 +31,7 @@ final class ExampleDataProvider {
                 return AnyListItem(item: itemModel)
             } else {
                 let id = UUID().uuidString
-                let text = "This is a really long and annoying advertisement I really want to get rid off."
+                let text = "⚠️ This is a really long and annoying advertisement I want to get rid off. Everyone knows that it's hard to hide from ads. They always find us ☢️!"
                 let viewRepresentationType = AdListItemViewRepresentationType.allCases.randomElement()!
                 let itemModel = AdListItem(id: id,
                                            text: text,

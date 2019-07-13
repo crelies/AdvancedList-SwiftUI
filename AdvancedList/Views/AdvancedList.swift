@@ -21,7 +21,7 @@ struct AdvancedList<EmptyStateView: View, ErrorStateView: View, LoadingStateView
             } else if listService.listState == .items {
                 if !listService.items.isEmpty {
                     List(listService.items.identified(by: \.id)) { item in
-                        item.viewRepresentation
+                        item
                     }
                 } else {
                     emptyStateView()

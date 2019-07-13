@@ -11,4 +11,5 @@ import Foundation
 enum AdListItemViewRepresentationType: CaseIterable {
     case short
     case long
+    case image
 }

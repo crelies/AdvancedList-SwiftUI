@@ -25,12 +25,12 @@ final class ListService: BindableObject {
         }
     }
     
-    func appendItems<Item: ListItem>(_ items: [Item]) {
+    func appendItems<Item: Identifiable>(_ items: [Item]) where Item: View {
         let anyListItems = items.map { AnyListItem(item: $0) }
         self.items.append(contentsOf: anyListItems)
     }
     
-    func updateItems<Item: ListItem>(_ items: [Item]) {
+    func updateItems<Item: Identifiable>(_ items: [Item]) where Item: View {
         let anyListItems = items.map { AnyListItem(item: $0) }
         for anyListItemModel in anyListItems {
             guard let itemIndex = self.items.firstIndex(where: { $0.id == anyListItemModel.id }) else {
@@ -41,7 +41,7 @@ final class ListService: BindableObject {
         }
     }
     
-    func removeItems<Item: ListItem>(_ items: [Item]) {
+    func removeItems<Item: Identifiable>(_ items: [Item]) where Item: View {
         let anyListItemsToRemove = items.map { AnyListItem(item: $0) }
         self.items.removeAll(where: { item in
              return anyListItemsToRemove.contains { item.id == $0.id }

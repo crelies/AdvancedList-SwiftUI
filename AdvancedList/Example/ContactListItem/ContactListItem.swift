@@ -9,37 +9,47 @@
 import Foundation
 import SwiftUI
 
-struct ContactListItem {
+struct ContactListItem: Identifiable {
+    @State private var collapsed: Bool = true
+    
     let id: String
     let firstName: String
     let lastName: String
     let streetAddress: String
     let zip: String
     let city: String
-    var viewRepresentationType: ContactListItemViewRepresentationType = .overview
+    
+    var viewRepresentationType: ContactListItemViewRepresentationType = .short
 }
 
-extension ContactListItem: ListItem {
-    var viewRepresentation: some View {
+extension ContactListItem: View {
+    var body: some View {
         Group {
-            if viewRepresentationType == .overview {
-                HStack {
-                    Text(firstName)
-                    Text(lastName)
-                }
+            if viewRepresentationType == .short {
+                ContactListItemView(firstName: firstName,
+                                    lastName: lastName,
+                                    hasMoreInformation: false)
             } else if viewRepresentationType == .detail {
+                NavigationLink(destination: ContactDetailView(listItem: self), label: {
+                    ContactListItemView(firstName: firstName,
+                                        lastName: lastName,
+                                        hasMoreInformation: true)
+                })
+            } else if viewRepresentationType == .collapsable {
                 VStack {
-                    Text("Detail")
-                        .font(.headline)
-                    HStack {
-                        Text(firstName)
-                        Text(lastName)
+                    if collapsed {
+                        ContactListItemView(firstName: firstName,
+                                            lastName: lastName,
+                                            hasMoreInformation: false)
+                    } else {
+                        ContactDetailView(listItem: self)
                     }
-                    Text(streetAddress)
-                    HStack {
-                        Text(zip)
-                        Text(city)
-                    }
+                    
+                    Button(action: {
+                        self.collapsed.toggle()
+                    }) {
+                        Text("\(collapsed ? "show" : "hide") details")
+                    }.foregroundColor(.blue)
                 }
             }
         }

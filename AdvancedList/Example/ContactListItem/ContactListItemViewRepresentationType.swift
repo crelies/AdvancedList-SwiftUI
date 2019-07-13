@@ -9,6 +9,7 @@
 import Foundation
 
 enum ContactListItemViewRepresentationType: CaseIterable {
-    case overview
+    case short
     case detail
+    case collapsable
 }
