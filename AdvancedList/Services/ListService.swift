@@ -49,6 +49,6 @@ final class ListService: BindableObject {
     }
     
     func removeAllItems() {
-        self.items.removeAll()
+        items.removeAll()
     }
 }
