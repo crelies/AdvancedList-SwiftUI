@@ -32,12 +32,12 @@ final class ListService: BindableObject {
     
     func updateItems<Item: Identifiable>(_ items: [Item]) where Item: View {
         let anyListItems = items.map { AnyListItem(item: $0) }
-        for anyListItemModel in anyListItems {
-            guard let itemIndex = self.items.firstIndex(where: { $0.id == anyListItemModel.id }) else {
+        for anyListItem in anyListItems {
+            guard let itemIndex = self.items.firstIndex(where: { $0.id == anyListItem.id }) else {
                 continue
             }
             
-            self.items[itemIndex] = anyListItemModel
+            self.items[itemIndex] = anyListItem
         }
     }
     

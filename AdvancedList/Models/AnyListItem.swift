@@ -13,7 +13,7 @@ struct AnyListItem: Identifiable, View {
     let id: AnyHashable
     let body: AnyView
     
-    init<T: Identifiable>(item: T) where T: View {
+    init<Item: Identifiable>(item: Item) where Item: View {
         id = item.id
         body = AnyView(item)
     }
