@@ -20,7 +20,7 @@ struct AdvancedList<EmptyStateView: View, ErrorStateView: View, LoadingStateView
                 errorStateView(listService.listState.error)
             } else if listService.listState == .items {
                 if !listService.items.isEmpty {
-                    List(listService.items.identified(by: \.id)) { item in
+                    List(listService.items, id: \.id) { item in
                         item
                     }
                 } else {
