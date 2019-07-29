@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct AdvancedList<EmptyStateView: View, ErrorStateView: View, LoadingStateView: View> : View {
-    @ObjectBinding private var listService: ListService
+    @ObservedObject private var listService: ListService
     private let emptyStateView: () -> EmptyStateView
     private let errorStateView: (Error?) -> ErrorStateView
     private let loadingStateView: () -> LoadingStateView

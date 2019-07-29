@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContentView : View {
-    @ObjectBinding private var listService: ListService = ListService()
+    @ObservedObject private var listService: ListService = ListService()
     
     var body: some View {
         NavigationView {

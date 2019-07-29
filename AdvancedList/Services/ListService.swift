@@ -10,18 +10,18 @@ import Combine
 import Foundation
 import SwiftUI
 
-final class ListService: BindableObject {
+final class ListService: ObservableObject {
     private(set) var items: [AnyListItem] = [] {
         didSet {
-            willChange.send()
+            objectWillChange.send()
         }
     }
     
-    private(set) var willChange = PassthroughSubject<Void, Never>()
+    private(set) var objectWillChange = PassthroughSubject<Void, Never>()
     
     var listState: ListState = .items {
         didSet {
-            willChange.send()
+            objectWillChange.send()
         }
     }
     
