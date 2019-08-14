@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AdvancedList",
+        "repositoryURL": "https://github.com/crelies/AdvancedList",
+        "state": {
+          "branch": null,
+          "revision": "d0c9ccb5cae5b5d77b350bc27290ddb0ab1db71c",
+          "version": "0.1.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

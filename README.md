@@ -1,10 +1,6 @@
 # AdvancedList-SwiftUI
 
-[![Swift5](https://img.shields.io/badge/swift5-compatible-green.svg?longCache=true&style=flat-square)](https://developer.apple.com/swift)
-[![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg?longCache=true&style=flat-square)](https://www.apple.com/de/ios)
-[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg?longCache=true&style=flat-square)](https://en.wikipedia.org/wiki/MIT_License)
-
-This repository contains the Swift Package and a usage example of an advanced list view for **SwiftUI** which adds an empty, error and loading state on top of the existing List view.
+This repository contains a usage example of my Swift package for an advanced **SwiftUI** `List view` which adds an empty, error and loading state on top of the existing `List view`. You can find the Swift package [here](https://github.com/crelies/AdvancedList).
 
 ## Motivation
 
