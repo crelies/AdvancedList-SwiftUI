@@ -8,25 +8,14 @@
 
 import Foundation
 
-enum ListState {
+public enum ListState {
     case error(_ error: Error?)
     case items
     case loading
 }
 
-extension ListState {
-    var error: Error? {
-        switch self {
-            case .error(let error):
-                return error
-            default:
-                return nil
-        }
-    }
-}
-
 extension ListState: Equatable {
-    static func ==(lhs: ListState, rhs: ListState) -> Bool {
+    public static func ==(lhs: ListState, rhs: ListState) -> Bool {
         switch (lhs, rhs) {
             case (.error(let lhsError), .error(let rhsError)):
                 if let lhsError = lhsError, let rhsError = rhsError {

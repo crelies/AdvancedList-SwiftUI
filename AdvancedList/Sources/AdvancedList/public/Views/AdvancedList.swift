@@ -8,13 +8,13 @@
 
 import SwiftUI
 
-struct AdvancedList<EmptyStateView: View, ErrorStateView: View, LoadingStateView: View> : View {
+public struct AdvancedList<EmptyStateView: View, ErrorStateView: View, LoadingStateView: View> : View {
     @ObservedObject private var listService: ListService
     private let emptyStateView: () -> EmptyStateView
     private let errorStateView: (Error?) -> ErrorStateView
     private let loadingStateView: () -> LoadingStateView
     
-    var body: some View {
+    public var body: some View {
         return Group {
             if listService.listState.error != nil {
                 errorStateView(listService.listState.error)
@@ -34,7 +34,7 @@ struct AdvancedList<EmptyStateView: View, ErrorStateView: View, LoadingStateView
         }
     }
     
-    init(listService: ListService, @ViewBuilder emptyStateView: @escaping () -> EmptyStateView, @ViewBuilder errorStateView: @escaping (Error?) -> ErrorStateView, @ViewBuilder loadingStateView: @escaping () -> LoadingStateView) {
+    public init(listService: ListService, @ViewBuilder emptyStateView: @escaping () -> EmptyStateView, @ViewBuilder errorStateView: @escaping (Error?) -> ErrorStateView, @ViewBuilder loadingStateView: @escaping () -> LoadingStateView) {
         self.listService = listService
         self.emptyStateView = emptyStateView
         self.errorStateView = errorStateView
@@ -45,7 +45,6 @@ struct AdvancedList<EmptyStateView: View, ErrorStateView: View, LoadingStateView
 #if DEBUG
 struct AdvancedList_Previews : PreviewProvider {
     private static let listService = ListService()
-    @State private static var listState: ListState = .items
     
     static var previews: some View {
         return NavigationView {

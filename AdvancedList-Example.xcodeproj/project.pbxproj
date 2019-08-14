@@ -3,24 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		B9884A4B22D3C99000063925 /* ExampleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9884A4A22D3C99000063925 /* ExampleError.swift */; };
 		B9884A4F22DA153900063925 /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9884A4E22DA153900063925 /* ContactDetailView.swift */; };
 		B9884A5122DA167E00063925 /* ContactListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9884A5022DA167E00063925 /* ContactListItemView.swift */; };
+		B9B7E175230440850018BD33 /* AdvancedList in Frameworks */ = {isa = PBXBuildFile; productRef = B9B7E174230440850018BD33 /* AdvancedList */; };
 		B9D9DFE822CA8CDC00051FE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D9DFE722CA8CDC00051FE2 /* AppDelegate.swift */; };
 		B9D9DFEA22CA8CDC00051FE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D9DFE922CA8CDC00051FE2 /* SceneDelegate.swift */; };
 		B9D9DFEC22CA8CDC00051FE2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D9DFEB22CA8CDC00051FE2 /* ContentView.swift */; };
 		B9D9DFEE22CA8CDD00051FE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D9DFED22CA8CDD00051FE2 /* Assets.xcassets */; };
 		B9D9DFF122CA8CDD00051FE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D9DFF022CA8CDD00051FE2 /* Preview Assets.xcassets */; };
 		B9D9DFF422CA8CDD00051FE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D9DFF222CA8CDD00051FE2 /* LaunchScreen.storyboard */; };
-		B9D9E00722CA8D9000051FE2 /* ListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D9E00622CA8D9000051FE2 /* ListState.swift */; };
 		B9D9E00C22CA8E5C00051FE2 /* ContactListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D9E00B22CA8E5C00051FE2 /* ContactListItem.swift */; };
-		B9D9E01122CA8E8E00051FE2 /* AdvancedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D9E01022CA8E8E00051FE2 /* AdvancedList.swift */; };
-		CE2984A422D90AAB002407EF /* AnyListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2984A322D90AAB002407EF /* AnyListItem.swift */; };
-		CE2984A822D90B16002407EF /* ListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2984A722D90B16002407EF /* ListService.swift */; };
 		CE2984AA22D90FC3002407EF /* AdDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2984A922D90FC3002407EF /* AdDetailView.swift */; };
 		CE2984AE22D91066002407EF /* ContactListItemViewRepresentationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2984AD22D91066002407EF /* ContactListItemViewRepresentationType.swift */; };
 		CE2984B022D91090002407EF /* AdListItemViewRepresentationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2984AF22D91090002407EF /* AdListItemViewRepresentationType.swift */; };
@@ -33,7 +30,9 @@
 		B9884A4A22D3C99000063925 /* ExampleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleError.swift; sourceTree = "<group>"; };
 		B9884A4E22DA153900063925 /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
 		B9884A5022DA167E00063925 /* ContactListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListItemView.swift; sourceTree = "<group>"; };
-		B9D9DFE422CA8CDC00051FE2 /* AdvancedList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdvancedList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9B7E172230440170018BD33 /* AdvancedList */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AdvancedList; sourceTree = "<group>"; };
+		B9B7E17623049FD60018BD33 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		B9D9DFE422CA8CDC00051FE2 /* AdvancedListExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdvancedListExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D9DFE722CA8CDC00051FE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9D9DFE922CA8CDC00051FE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B9D9DFEB22CA8CDC00051FE2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,12 +40,8 @@
 		B9D9DFF022CA8CDD00051FE2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B9D9DFF322CA8CDD00051FE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9D9DFF522CA8CDD00051FE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B9D9E00622CA8D9000051FE2 /* ListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListState.swift; sourceTree = "<group>"; };
 		B9D9E00B22CA8E5C00051FE2 /* ContactListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListItem.swift; sourceTree = "<group>"; };
-		B9D9E01022CA8E8E00051FE2 /* AdvancedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedList.swift; sourceTree = "<group>"; };
 		B9D9E01222CA971D00051FE2 /* AdvancedList.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = AdvancedList.gif; sourceTree = SOURCE_ROOT; };
-		CE2984A322D90AAB002407EF /* AnyListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyListItem.swift; sourceTree = "<group>"; };
-		CE2984A722D90B16002407EF /* ListService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListService.swift; sourceTree = "<group>"; };
 		CE2984A922D90FC3002407EF /* AdDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailView.swift; sourceTree = "<group>"; };
 		CE2984AD22D91066002407EF /* ContactListItemViewRepresentationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListItemViewRepresentationType.swift; sourceTree = "<group>"; };
 		CE2984AF22D91090002407EF /* AdListItemViewRepresentationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdListItemViewRepresentationType.swift; sourceTree = "<group>"; };
@@ -60,36 +55,44 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9B7E175230440850018BD33 /* AdvancedList in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B9B7E173230440850018BD33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B9D9DFDB22CA8CDC00051FE2 = {
 			isa = PBXGroup;
 			children = (
-				B9D9DFE622CA8CDC00051FE2 /* AdvancedList */,
+				B9B7E172230440170018BD33 /* AdvancedList */,
+				B9D9DFE622CA8CDC00051FE2 /* AdvancedListExample */,
 				B9D9DFE522CA8CDC00051FE2 /* Products */,
+				B9B7E173230440850018BD33 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		B9D9DFE522CA8CDC00051FE2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B9D9DFE422CA8CDC00051FE2 /* AdvancedList.app */,
+				B9D9DFE422CA8CDC00051FE2 /* AdvancedListExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B9D9DFE622CA8CDC00051FE2 /* AdvancedList */ = {
+		B9D9DFE622CA8CDC00051FE2 /* AdvancedListExample */ = {
 			isa = PBXGroup;
 			children = (
 				B9D9E01222CA971D00051FE2 /* AdvancedList.gif */,
+				B9B7E17623049FD60018BD33 /* README.md */,
 				B9D9E00A22CA8E4800051FE2 /* Example */,
-				B9D9DFFD22CA8D3300051FE2 /* Models */,
-				CE2984A622D90B06002407EF /* Services */,
-				B9D9E00F22CA8E7F00051FE2 /* Views */,
 				B9D9DFE722CA8CDC00051FE2 /* AppDelegate.swift */,
 				B9D9DFE922CA8CDC00051FE2 /* SceneDelegate.swift */,
 				B9D9DFED22CA8CDD00051FE2 /* Assets.xcassets */,
@@ -97,7 +100,7 @@
 				B9D9DFF522CA8CDD00051FE2 /* Info.plist */,
 				B9D9DFEF22CA8CDD00051FE2 /* Preview Content */,
 			);
-			path = AdvancedList;
+			path = AdvancedListExample;
 			sourceTree = "<group>";
 		};
 		B9D9DFEF22CA8CDD00051FE2 /* Preview Content */ = {
@@ -106,15 +109,6 @@
 				B9D9DFF022CA8CDD00051FE2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		B9D9DFFD22CA8D3300051FE2 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				CE2984A322D90AAB002407EF /* AnyListItem.swift */,
-				B9D9E00622CA8D9000051FE2 /* ListState.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		B9D9E00A22CA8E4800051FE2 /* Example */ = {
@@ -128,22 +122,6 @@
 				B9884A4A22D3C99000063925 /* ExampleError.swift */,
 			);
 			path = Example;
-			sourceTree = "<group>";
-		};
-		B9D9E00F22CA8E7F00051FE2 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				B9D9E01022CA8E8E00051FE2 /* AdvancedList.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		CE2984A622D90B06002407EF /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				CE2984A722D90B16002407EF /* ListService.swift */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		CE2984AB22D9104B002407EF /* ContactListItem */ = {
@@ -170,9 +148,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B9D9DFE322CA8CDC00051FE2 /* AdvancedList */ = {
+		B9D9DFE322CA8CDC00051FE2 /* AdvancedListExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B9D9DFF822CA8CDD00051FE2 /* Build configuration list for PBXNativeTarget "AdvancedList" */;
+			buildConfigurationList = B9D9DFF822CA8CDD00051FE2 /* Build configuration list for PBXNativeTarget "AdvancedListExample" */;
 			buildPhases = (
 				B9D9DFE022CA8CDC00051FE2 /* Sources */,
 				B9D9DFE122CA8CDC00051FE2 /* Frameworks */,
@@ -182,9 +160,12 @@
 			);
 			dependencies = (
 			);
-			name = AdvancedList;
+			name = AdvancedListExample;
+			packageProductDependencies = (
+				B9B7E174230440850018BD33 /* AdvancedList */,
+			);
 			productName = AdvancedList;
-			productReference = B9D9DFE422CA8CDC00051FE2 /* AdvancedList.app */;
+			productReference = B9D9DFE422CA8CDC00051FE2 /* AdvancedListExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -202,7 +183,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B9D9DFDF22CA8CDC00051FE2 /* Build configuration list for PBXProject "AdvancedList" */;
+			buildConfigurationList = B9D9DFDF22CA8CDC00051FE2 /* Build configuration list for PBXProject "AdvancedList-Example" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -215,7 +196,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B9D9DFE322CA8CDC00051FE2 /* AdvancedList */,
+				B9D9DFE322CA8CDC00051FE2 /* AdvancedListExample */,
 			);
 		};
 /* End PBXProject section */
@@ -239,8 +220,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEAD564922D7C26300FB141B /* CustomListStateSegmentedControlView.swift in Sources */,
-				B9D9E01122CA8E8E00051FE2 /* AdvancedList.swift in Sources */,
-				CE2984A822D90B16002407EF /* ListService.swift in Sources */,
 				B9D9DFE822CA8CDC00051FE2 /* AppDelegate.swift in Sources */,
 				B9D9DFEA22CA8CDC00051FE2 /* SceneDelegate.swift in Sources */,
 				CEAD564722D75C4500FB141B /* ExampleDataProvider.swift in Sources */,
@@ -252,9 +231,7 @@
 				CE2984AA22D90FC3002407EF /* AdDetailView.swift in Sources */,
 				CE2984AE22D91066002407EF /* ContactListItemViewRepresentationType.swift in Sources */,
 				B9884A4B22D3C99000063925 /* ExampleError.swift in Sources */,
-				CE2984A422D90AAB002407EF /* AnyListItem.swift in Sources */,
 				B9D9E00C22CA8E5C00051FE2 /* ContactListItem.swift in Sources */,
-				B9D9E00722CA8D9000051FE2 /* ListState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,14 +368,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "AdvancedList/Preview\\ Content";
+				DEVELOPMENT_ASSET_PATHS = "AdvancedListExample/Preview\\ Content";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = AdvancedList/Info.plist;
+				INFOPLIST_FILE = AdvancedListExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.crelies.AdvancedList;
+				PRODUCT_BUNDLE_IDENTIFIER = de.crelies.AdvancedListExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -410,14 +387,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "AdvancedList/Preview\\ Content";
+				DEVELOPMENT_ASSET_PATHS = "AdvancedListExample/Preview\\ Content";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = AdvancedList/Info.plist;
+				INFOPLIST_FILE = AdvancedListExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.crelies.AdvancedList;
+				PRODUCT_BUNDLE_IDENTIFIER = de.crelies.AdvancedListExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -427,7 +404,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B9D9DFDF22CA8CDC00051FE2 /* Build configuration list for PBXProject "AdvancedList" */ = {
+		B9D9DFDF22CA8CDC00051FE2 /* Build configuration list for PBXProject "AdvancedList-Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B9D9DFF622CA8CDD00051FE2 /* Debug */,
@@ -436,7 +413,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B9D9DFF822CA8CDD00051FE2 /* Build configuration list for PBXNativeTarget "AdvancedList" */ = {
+		B9D9DFF822CA8CDD00051FE2 /* Build configuration list for PBXNativeTarget "AdvancedListExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B9D9DFF922CA8CDD00051FE2 /* Debug */,
@@ -446,6 +423,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B9B7E174230440850018BD33 /* AdvancedList */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AdvancedList;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B9D9DFDC22CA8CDC00051FE2 /* Project object */;
 }

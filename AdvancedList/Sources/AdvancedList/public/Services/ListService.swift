@@ -10,27 +10,29 @@ import Combine
 import Foundation
 import SwiftUI
 
-final class ListService: ObservableObject {
-    private(set) var items: [AnyListItem] = [] {
+public final class ListService: ObservableObject {
+    public let objectWillChange = PassthroughSubject<Void, Never>()
+    
+    public private(set) var items: [AnyListItem] = [] {
         didSet {
             objectWillChange.send()
         }
     }
     
-    private(set) var objectWillChange = PassthroughSubject<Void, Never>()
-    
-    var listState: ListState = .items {
+    public var listState: ListState = .items {
         didSet {
             objectWillChange.send()
         }
     }
     
-    func appendItems<Item: Identifiable>(_ items: [Item]) where Item: View {
+    public init() {}
+    
+    public func appendItems<Item: Identifiable>(_ items: [Item]) where Item: View {
         let anyListItems = items.map { AnyListItem(item: $0) }
         self.items.append(contentsOf: anyListItems)
     }
     
-    func updateItems<Item: Identifiable>(_ items: [Item]) where Item: View {
+    public func updateItems<Item: Identifiable>(_ items: [Item]) where Item: View {
         let anyListItems = items.map { AnyListItem(item: $0) }
         for anyListItem in anyListItems {
             guard let itemIndex = self.items.firstIndex(where: { $0.id == anyListItem.id }) else {
@@ -41,14 +43,14 @@ final class ListService: ObservableObject {
         }
     }
     
-    func removeItems<Item: Identifiable>(_ items: [Item]) where Item: View {
+    public func removeItems<Item: Identifiable>(_ items: [Item]) where Item: View {
         let anyListItemsToRemove = items.map { AnyListItem(item: $0) }
         self.items.removeAll(where: { item in
              return anyListItemsToRemove.contains { item.id == $0.id }
         })
     }
     
-    func removeAllItems() {
+    public func removeAllItems() {
         items.removeAll()
     }
 }

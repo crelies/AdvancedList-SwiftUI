@@ -9,11 +9,11 @@
 import Foundation
 import SwiftUI
 
-struct AnyListItem: Identifiable, View {
-    let id: AnyHashable
-    let body: AnyView
+public struct AnyListItem: Identifiable, View {
+    public let id: AnyHashable
+    public let body: AnyView
     
-    init<Item: Identifiable>(item: Item) where Item: View {
+    public init<Item: Identifiable>(item: Item) where Item: View {
         id = item.id
         body = AnyView(item)
     }

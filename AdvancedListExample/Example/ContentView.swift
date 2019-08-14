@@ -6,6 +6,7 @@
 //  Copyright © 2019 Christian Elies. All rights reserved.
 //
 
+import AdvancedList
 import SwiftUI
 
 struct ContentView : View {
