@@ -21,10 +21,10 @@ struct ContentView : View {
                     AdvancedList(listService: self.listService, emptyStateView: {
                         Text("No data")
                     }, errorStateView: { error in
-                        Text("\(error?.localizedDescription ?? "Error")").lineLimit(nil)
+                        Text("\(error.localizedDescription)").lineLimit(nil)
                     }, loadingStateView: {
                         Text("Loading ...")
-                    })
+                    }, pagination: .noPagination)
                     .frame(width: geometry.size.width)
                 }
                 .navigationBarTitle(Text("List of Items"))
