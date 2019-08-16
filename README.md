@@ -1,6 +1,6 @@
 # AdvancedList-SwiftUI
 
-This repository contains a usage example of my Swift package for an advanced **SwiftUI** `List view` which adds an empty, error and loading state on top of the existing `List view`. You can find the Swift package [here](https://github.com/crelies/AdvancedList).
+This repository contains a usage example of my Swift package for an advanced **SwiftUI** `List view` which adds **pagination** and an **empty, error and loading state** on top of the existing `List view`. You can find the Swift package [here](https://github.com/crelies/AdvancedList).
 
 ## Motivation
 
