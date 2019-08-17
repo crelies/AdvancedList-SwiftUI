@@ -27,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B91CAD882307F8A100EB67B1 /* AdvancedListExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AdvancedListExample.entitlements; sourceTree = "<group>"; };
 		B9884A4A22D3C99000063925 /* ExampleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleError.swift; sourceTree = "<group>"; };
 		B9884A4E22DA153900063925 /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
 		B9884A5022DA167E00063925 /* ContactListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListItemView.swift; sourceTree = "<group>"; };
@@ -88,6 +89,7 @@
 		B9D9DFE622CA8CDC00051FE2 /* AdvancedListExample */ = {
 			isa = PBXGroup;
 			children = (
+				B91CAD882307F8A100EB67B1 /* AdvancedListExample.entitlements */,
 				B9D9E01222CA971D00051FE2 /* AdvancedList.gif */,
 				B9B7E17623049FD60018BD33 /* README.md */,
 				B9D9E00A22CA8E4800051FE2 /* Example */,
@@ -368,8 +370,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = AdvancedListExample/AdvancedListExample.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Manual;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "AdvancedListExample/Preview\\ Content";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = AdvancedListExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -378,6 +384,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.crelies.AdvancedListExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -387,8 +395,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = AdvancedListExample/AdvancedListExample.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Manual;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "AdvancedListExample/Preview\\ Content";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = AdvancedListExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -397,6 +409,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.crelies.AdvancedListExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
