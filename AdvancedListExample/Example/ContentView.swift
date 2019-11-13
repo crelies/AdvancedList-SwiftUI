@@ -10,13 +10,14 @@ import AdvancedList
 import SwiftUI
 
 struct ContentView : View {
-    @ObservedObject private var listService: ListService = ListService()
+    private let listService = ListService()
     
     var body: some View {
         NavigationView {
             return GeometryReader { geometry in
                 VStack {
-                    CustomListStateSegmentedControlView(listService: self.listService)
+                    CustomListStateSegmentedControlView()
+                        .environmentObject(self.listService)
                     
                     AdvancedList(listService: self.listService, emptyStateView: {
                         Text("No data")
@@ -29,7 +30,7 @@ struct ContentView : View {
                 }
                 .navigationBarTitle(Text("List of Items"))
             }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

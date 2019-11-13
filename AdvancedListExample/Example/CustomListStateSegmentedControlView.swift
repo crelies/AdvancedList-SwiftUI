@@ -11,42 +11,38 @@ import Foundation
 import SwiftUI
 
 struct CustomListStateSegmentedControlView : View {
-    private weak var listService: ListService?
+    @EnvironmentObject private var listService: ListService
     
     var body: some View {
         HStack {
             Button(action: {
-                self.listService?.listState = .items
+                self.listService.listState = .items
                 
                 let items = ExampleDataProvider.randomItems()
-                self.listService?.removeAllItems()
-                self.listService?.appendItems(items)
+                self.listService.removeAllItems()
+                self.listService.appendItems(items)
             }) {
                 Text("Items")
             }
             
             Button(action: {
-                self.listService?.removeAllItems()
-                self.listService?.listState = .items
+                self.listService.removeAllItems()
+                self.listService.listState = .items
             }) {
                 Text("Empty")
             }
             
             Button(action: {
-                self.listService?.listState = .loading
+                self.listService.listState = .loading
             }) {
                 Text("Loading")
             }
             
             Button(action: {
-                self.listService?.listState = .error(ExampleError.allCases.randomElement()!)
+                self.listService.listState = .error(ExampleError.allCases.randomElement()!)
             }) {
                 Text("Error")
             }
         }
-    }
-    
-    init(listService: ListService) {
-        self.listService = listService
     }
 }
