@@ -1,6 +1,6 @@
 //
 //  ExampleError.swift
-//  AdvancedList
+//  AdvancedListExample
 //
 //  Created by Christian Elies on 08.07.19.
 //  Copyright © 2019 Christian Elies. All rights reserved.

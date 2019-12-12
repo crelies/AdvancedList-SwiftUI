@@ -1,12 +1,11 @@
 //
 //  AdDetailView.swift
-//  AdvancedList
+//  AdvancedListExample
 //
 //  Created by Christian Elies on 12.07.19.
 //  Copyright © 2019 Christian Elies. All rights reserved.
 //
 
-import Foundation
 import SwiftUI
 
 struct AdDetailView : View {

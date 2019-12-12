@@ -1,45 +1,45 @@
 //
 //  CustomListStateSegmentedControlView.swift
-//  AdvancedList
+//  AdvancedListExample
 //
 //  Created by Christian Elies on 11.07.19.
 //  Copyright © 2019 Christian Elies. All rights reserved.
 //
 
 import AdvancedList
-import Foundation
 import SwiftUI
 
 struct CustomListStateSegmentedControlView : View {
-    @EnvironmentObject private var listService: ListService
+    let listState: Binding<ListState>
+    let items: Binding<[AnyIdentifiable]>
     
     var body: some View {
         HStack {
             Button(action: {
-                self.listService.listState = .items
+                self.listState.wrappedValue = .items
                 
                 let items = ExampleDataProvider.randomItems()
-                self.listService.removeAllItems()
-                self.listService.appendItems(items)
+                self.items.wrappedValue.removeAll()
+                self.items.wrappedValue.append(contentsOf: items)
             }) {
                 Text("Items")
             }
             
             Button(action: {
-                self.listService.removeAllItems()
-                self.listService.listState = .items
+                self.items.wrappedValue.removeAll()
+                self.listState.wrappedValue = .items
             }) {
                 Text("Empty")
             }
             
             Button(action: {
-                self.listService.listState = .loading
+                self.listState.wrappedValue = .loading
             }) {
                 Text("Loading")
             }
             
             Button(action: {
-                self.listService.listState = .error(ExampleError.allCases.randomElement()!)
+                self.listState.wrappedValue = .error(ExampleError.allCases.randomElement()!)
             }) {
                 Text("Error")
             }

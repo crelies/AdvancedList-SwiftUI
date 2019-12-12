@@ -1,19 +1,18 @@
 //
 //  ExampleDataProvider.swift
-//  AdvancedList
+//  AdvancedListExample
 //
 //  Created by Christian Elies on 11.07.19.
 //  Copyright © 2019 Christian Elies. All rights reserved.
 //
 
 import AdvancedList
-import Foundation
 import SwiftUI
 
 final class ExampleDataProvider {
-    static func randomItems() -> [AnyListItem] {
+    static func randomItems() -> [AnyIdentifiable] {
         let itemCount = Array(5...15).randomElement()!
-        let items: [AnyListItem] = Array(0...itemCount).map { _ in
+        let items: [AnyIdentifiable] = Array(0...itemCount).map { _ in
             if Bool.random() {
                 let id = UUID().uuidString
                 let firstName = "Max"
@@ -29,7 +28,7 @@ final class ExampleDataProvider {
                                                 zip: zip,
                                                 city: city,
                                                 viewRepresentationType: viewRepresentationType)
-                return AnyListItem(item: itemModel)
+                return AnyIdentifiable(itemModel)
             } else {
                 let id = UUID().uuidString
                 let text = "⚠️ This is a really long and annoying advertisement I want to get rid off. Everyone knows that it's hard to hide from ads. They always find us ☢️!"
@@ -37,7 +36,7 @@ final class ExampleDataProvider {
                 let itemModel = AdListItem(id: id,
                                            text: text,
                                            viewRepresentationType: viewRepresentationType)
-                return AnyListItem(item: itemModel)
+                return AnyIdentifiable(itemModel)
             }
         }
         return items
