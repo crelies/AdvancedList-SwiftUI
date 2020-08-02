@@ -40,6 +40,7 @@
 		B9BFF20324D778DA005C9C21 /* CustomListStateSegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD564822D7C26300FB141B /* CustomListStateSegmentedControlView.swift */; };
 		B9BFF20424D778DA005C9C21 /* CustomListStateSegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD564822D7C26300FB141B /* CustomListStateSegmentedControlView.swift */; };
 		B9BFF20624D778F5005C9C21 /* AdvancedList in Frameworks */ = {isa = PBXBuildFile; productRef = B9BFF20524D778F5005C9C21 /* AdvancedList */; };
+		B9BFF20824D77C28005C9C21 /* AdvancedList in Frameworks */ = {isa = PBXBuildFile; productRef = B9BFF20724D77C28005C9C21 /* AdvancedList */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9BFF20824D77C28005C9C21 /* AdvancedList in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +226,9 @@
 			dependencies = (
 			);
 			name = "AdvancedListExample (macOS)";
+			packageProductDependencies = (
+				B9BFF20724D77C28005C9C21 /* AdvancedList */,
+			);
 			productName = "AdvancedListExample (macOS)";
 			productReference = B9BFF1D824D777BD005C9C21 /* AdvancedListExample.app */;
 			productType = "com.apple.product-type.application";
@@ -585,6 +590,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		B9BFF20524D778F5005C9C21 /* AdvancedList */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B9B7E1782304AE8B0018BD33 /* XCRemoteSwiftPackageReference "AdvancedList" */;
+			productName = AdvancedList;
+		};
+		B9BFF20724D77C28005C9C21 /* AdvancedList */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B9B7E1782304AE8B0018BD33 /* XCRemoteSwiftPackageReference "AdvancedList" */;
 			productName = AdvancedList;

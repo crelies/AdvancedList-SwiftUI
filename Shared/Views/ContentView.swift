@@ -14,6 +14,22 @@ struct ContentView: View {
     @State private var listState: ListState = .items
     @State private var paginationState: AdvancedListPaginationState = .idle
 
+    private var backgroundColor: Color? {
+        #if os(iOS)
+        return Color(.secondarySystemBackground)
+        #else
+        return nil
+        #endif
+    }
+
+    private var navigationStyle: some NavigationViewStyle {
+        #if os(iOS)
+        return StackNavigationViewStyle()
+        #else
+        return DefaultNavigationViewStyle()
+        #endif
+    }
+
     var body: some View {
         NavigationView {
             GeometryReader { geometry in
@@ -53,7 +69,7 @@ struct ContentView: View {
                                 Spacer()
                             }
                             .padding()
-                            .background(Color(.secondarySystemBackground))
+                            .background(backgroundColor)
                             .cornerRadius(16)
                             .padding(.horizontal)
 
@@ -75,7 +91,7 @@ struct ContentView: View {
                                 Spacer()
                             }
                             .padding()
-                            .background(Color(.secondarySystemBackground))
+                            .background(backgroundColor)
                             .cornerRadius(16)
                             .padding(.horizontal)
                         }
@@ -84,7 +100,7 @@ struct ContentView: View {
                 }
                 .navigationTitle(Text("List of Items"))
             }
-        }.navigationViewStyle(StackNavigationViewStyle())
+        }.navigationViewStyle(navigationStyle)
     }
 }
 
@@ -100,6 +116,10 @@ private extension ContentView {
     }
 
     func loadNextItems() {
+        guard paginationState != .loading else {
+            return
+        }
+
         paginationState = .loading
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
