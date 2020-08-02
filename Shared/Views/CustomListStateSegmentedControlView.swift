@@ -39,7 +39,7 @@ struct CustomListStateSegmentedControlView : View {
             }
             
             Button(action: {
-                self.listState.wrappedValue = .error(ExampleError.allCases.randomElement()!)
+                self.listState.wrappedValue = .error(ExampleError.allCases.randomElement()! as NSError)
             }) {
                 Text("Error")
             }

@@ -14,33 +14,31 @@ struct ContactListItemView: View {
     let contactListItem: ContactListItem
 
     var body: some View {
-        Group {
-            if contactListItem.viewRepresentationType == .short {
+        if contactListItem.viewRepresentationType == .short {
+            ContactView(firstName: contactListItem.firstName,
+                        lastName: contactListItem.lastName,
+                        hasMoreInformation: false)
+        } else if contactListItem.viewRepresentationType == .detail {
+            NavigationLink(destination: ContactDetailView(listItem: contactListItem), label: {
                 ContactView(firstName: contactListItem.firstName,
                             lastName: contactListItem.lastName,
-                            hasMoreInformation: false)
-            } else if contactListItem.viewRepresentationType == .detail {
-                NavigationLink(destination: ContactDetailView(listItem: contactListItem), label: {
+                            hasMoreInformation: true)
+            })
+        } else if contactListItem.viewRepresentationType == .collapsable {
+            VStack {
+                if collapsed {
                     ContactView(firstName: contactListItem.firstName,
                                 lastName: contactListItem.lastName,
-                                hasMoreInformation: true)
-                })
-            } else if contactListItem.viewRepresentationType == .collapsable {
-                VStack {
-                    if collapsed {
-                        ContactView(firstName: contactListItem.firstName,
-                                    lastName: contactListItem.lastName,
-                                    hasMoreInformation: false)
-                    } else {
-                        ContactDetailView(listItem: contactListItem)
-                    }
-
-                    Button(action: {
-                        self.collapsed.toggle()
-                    }) {
-                        Text("\(collapsed ? "show" : "hide") details")
-                    }.foregroundColor(.blue)
+                                hasMoreInformation: false)
+                } else {
+                    ContactDetailView(listItem: contactListItem)
                 }
+
+                Button(action: {
+                    self.collapsed.toggle()
+                }) {
+                    Text("\(collapsed ? "show" : "hide") details")
+                }.foregroundColor(.blue)
             }
         }
     }

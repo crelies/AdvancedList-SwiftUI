@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/crelies/AdvancedList",
         "state": {
           "branch": null,
-          "revision": "c7a03b7177acd10bbdc6a99252582d549f0bce3a",
-          "version": "4.0.0"
+          "revision": "489289c599673e3ec2158d6061e8eb8ed128a045",
+          "version": "5.0.0"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/crelies/ListPagination",
         "state": {
           "branch": null,
-          "revision": "1557cfe6508f5ea7361dbec8be6d27a2392a4015",
-          "version": "0.1.0"
+          "revision": "af667b368a10512da79605b61698d53c11d24cbf",
+          "version": "0.1.1"
         }
       }
     ]
